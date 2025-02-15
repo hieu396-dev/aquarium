@@ -1,0 +1,130 @@
+.layout-content{ 
+    font-family: museo-sans, sans-serif;
+    background-color: #c6deed;
+    width: 100%;
+}
+.node-page .layout-content {
+    padding-top: 130px;
+    position: relative;
+    overflow-x: hidden;
+}
+h1 {
+    font-family: NewBeginnings;
+    font-size: 48px;
+    line-height: 48px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #262e8b; 
+    padding: 300px 0 75px; 
+}
+.para-t h2 {
+    font-family: NewBeginnings;
+    text-transform: uppercase;
+    font-size: 38px;
+    line-height: 46px;
+    margin-bottom: 20px;
+}
+.para-t .txt p {
+    font-size: 18px;
+    line-height: 26px;
+    color: #063853;
+}
+.para-it-it-it .img img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 30px 50px 100px 50px / 100px 50px 50px 50px;
+    margin: 60px 0;
+}
+
+.para img {
+    width: 100%;
+    vertical-align: middle;
+}
+.para-it-it-it h3 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+.para-it-it-it .txt {
+    font-size: 2px;
+    line-height: 32px;
+    font-weight: 400;
+}
+.para-it-it-it.white .cta{
+    background-color: #F2B000;
+    color: #063853;
+    display: inline-block;
+    margin-top: 135px;
+}
+
+.cta {
+    font-size: 20px;
+    line-height: 32px;
+    padding: 16px 26px;
+    border-radius: 16px;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    text-decoration: none;
+    font-weight: 600;
+}
+.para-it-it-it .deco-bottom {
+    padding-top: 10px;
+    display: block;
+    width: 100%;
+    height: 120px;
+    margin-top: 20px;
+}
+.para-it-it-it.mb-yellow .deco-bottom svg {
+    fill: #F2B000;
+}
+.para-i-t.yellow {
+    background-color: #F2B000;
+    margin-top: 25px;
+}
+
+.para-i-t {
+    padding: 60px 0 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.para img {
+    width: 100%;
+    vertical-align: middle;
+    border-radius: 30px 50px 100px 85px / 100px 65px 28px 52px;
+    margin-top: 75px;
+}
+
+.para-i-t h2 {
+    font-family: NewBeginnings;
+    text-transform: uppercase;
+    font-size: 38px;
+    line-height: 46px;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 400;
+}
+.para-i-t.yellow .cta.cta-theme {
+    background-color: transparent;
+    color: #063853;
+    border: 2px solid #063853;
+}
+.para-i-t .cta {
+    display: inline-block;
+    margin-top: 20px;
+}
+.para-i-t.yellow .cta.cta-theme:hover {
+    background-color: #063853;
+    color: white;
+}
+.para-it-it-it .img .lat{
+    margin-top: 30%;
+}
+.item {
+    padding-bottom: 100px;
+}

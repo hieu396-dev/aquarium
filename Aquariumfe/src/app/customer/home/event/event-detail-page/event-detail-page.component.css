@@ -1,0 +1,130 @@
+.layout-content {
+    padding-top: 150px;
+}
+.node-event h1 {
+    font-size: 54px;
+    line-height: 60px;
+    font-family: NewBeginnings, sans-serif;
+    color: rgb(53, 161, 197);
+    margin-bottom: 40px;
+}
+.node-event .hero img {
+    width: 100%;
+    vertical-align: middle;
+    border-radius: 30px 50px 100px 85px / 100px 65px 28px 52px; 
+    height: 400px;
+}
+.event-title{
+  margin-top: 200px;
+}
+
+.node-event .content {
+font-size: 20px;
+line-height: 32px;
+color: #063853;
+padding-bottom: 60px;
+padding-top: 60px;
+padding-right: 25%;
+}
+
+.newsletter {
+    background-color: rgb(53, 161, 197);
+  }
+  
+  .newsletter {
+    position: relative;
+    padding: 60px 0 60px 0;
+    margin-top: 15px;
+  }
+  .newsletter .txt {
+    color: #fff;
+    padding-bottom: 45px;
+  }
+  
+  .newsletter h2 {
+    font-family: NewBeginnings, sans-serif;
+    text-transform: uppercase;
+    font-size: 50px;
+    line-height: 60px;
+    margin-bottom: 30px;
+    color: #ffffff;
+  }
+  .newsletter .txt p {
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 50px; 
+  }
+  
+  .newsletter img {
+    width: 100%;
+    vertical-align: middle;
+    border-radius: 30px 50px 100px 85px / 100px 65px 28px 52px;
+  }
+  .cta-yellow:hover, .cta-outline:hover {   
+    background-color: #063853;
+    color: #fff;
+  }
+  .cta-yellow {
+    background-color:  #F2B000; 
+    color: #fff;
+  } 
+  .cta {
+      font-size: 20px;
+      line-height: 32px;
+      padding: 16px 26px;
+      border-radius: 16px;
+      transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 15px; 
+  } 
+
+  .cta-detail:hover{
+    background-color: #063853;
+    color: #fff;
+  }
+
+  .cta-event {
+    margin-top: 35px;
+  } 
+
+  .para-cards .cta {
+    font-size: 18px;
+    line-height: 28px;
+    color: #063853;
+    border: 1px solid #063853;
+    display: inline-block;
+}
+
+.para-cards {
+    padding: 50px 0;
+    position: relative;
+    overflow: hidden;
+}
+.para-cards .para-content {
+    position: relative;
+    z-index: 1; 
+}
+.para-cards .item {
+    margin-bottom: 30px;
+    padding-right: 30px;
+}
+.para-cards .inner {
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0px -2px 30px 0px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    height: 535px;
+}
+.para-cards .img img {
+    border-radius: 16px;
+    display: inline-block;
+    margin-bottom: 25px;
+    height: 230px;
+    object-fit: cover;
+}
+.para img {
+    width: 100%;
+    vertical-align: middle;
+}
+

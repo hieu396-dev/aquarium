@@ -1,0 +1,93 @@
+<div class="header">
+    <div class="header-link">
+        <a href>Animals</a><i
+            class="bi bi-chevron-left header-icon"></i>
+        <a href="animal">Abalone</a>
+    </div>
+    <h1 class="species-name">Abalone</h1>
+    <h2 class="science-name">Haliotis sp.</h2>
+</div>
+<div class="background-card">
+    <div class="animal-detail-card">
+        <div class="animal-top-card">
+            <div class="animal-image">
+                <img *ngIf="animal.img[currentImageIndex].imgName" [src]="'http://localhost:8080/image/'+animal.img[currentImageIndex].imgName" alt="Abalone" />
+                <div class="slide-controls">
+                    <button (click)="prevImage()">&#10094;</button>
+                    <button (click)="nextImage()">&#10095;</button>
+                </div>
+            </div>
+
+            <div class="animal-info">
+                <h2>Meet the {{animal.name}}</h2>
+                <p class="description">
+                    {{animal.img[currentImageIndex].description}}
+                </p>
+            </div>
+        </div>
+        <div class="animal-details">
+            <div class="row-detail">
+                <div class="detail">
+                    <span class="detail-title"><i
+                            class="bi bi-tag detail-icon"></i>Animal Type</span>
+                    <p>{{animal.species.name}}</p>
+                </div>
+                <div class="detail">
+                    <span class="detail-title"><i
+                            class="bi bi-egg detail-icon"></i>Diet</span>
+                    <p>{{animal.species.diet}}</p>
+                </div>
+            </div>
+            <div class="row-detail-middle">
+                <div class="detail">
+                    <span class="detail-title"><i
+                            class="bi bi-water detail-icon"></i>Habitat</span>
+                    <p>{{animal.species.habitat}}</p>
+                </div>
+                <div class="detail">
+                    <span class="detail-title"><i
+                            class="bi bi-activity detail-icon"></i>Lifespan</span>
+                    <p>About {{animal.species.diet}}</p>
+                </div>
+            </div>
+            <div class="row-detail">
+                <div class="detail">
+                    <span class="detail-title"><i
+                            class="bi bi-rulers detail-icon"></i>Size</span>
+                    <p>Weight: {{animal.weight}} and Length: {{animal.length}}  </p>
+                </div>
+                <div class="detail">
+                    <span class="detail-title"><i
+                            class="bi bi-suit-heart-fill detail-icon"></i>Characteristics</span>
+                    <p>{{animal.species.specialCharacteristics}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="aquarium-banner">
+    <div class="overlay">
+        <h2>More like this?</h2>
+        <p>Find out more cool and special species below!</p>
+    </div>
+</section>
+<div class="similar-species">
+    <h1>similar species</h1>
+    <p>{{animal.species.name}}</p>
+</div>
+<section class="animal-section">
+    <div *ngFor="let a of otherAnimal" class="animal-card">
+        <a href="customer/animal/details/{{a.id}}" class="card-link">
+            <img *ngIf="animal.img[1].imgName" [src]="'http://localhost:8080/image/'+ a.img[1].imgName" alt="Sea Otter">
+            <div class="animal-content">
+                <p class="animal-type">ANIMAL</p>
+                <h3 class="name">{{a.name}}</h3>
+                <p class="content ellipsis">{{a.exhibitStatus}}</p>
+                <div class="see-more">
+                    <p><i class="bi bi-arrow-right-circle see-more-icon"></i>See
+                        more</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>

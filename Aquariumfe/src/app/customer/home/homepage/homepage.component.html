@@ -1,0 +1,105 @@
+<div role="main">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="third-slide" src="/assets/img/back4.jpg" 
+            alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption text-left">
+              <h1>Welcome to the Aquarium!</h1>
+              <p>Immerse yourself in the beauty and mystery of the ocean as you explore an incredible variety of marine life. 
+                From playful sea otters to vibrant coral reefs, every corner of our aquarium is filled with awe-inspiring creatures 
+                and stories waiting to be discovered.</p>
+                <p *ngIf="!checkLogin()">
+                  <a 
+                    class="btn btn-lg btn-primary" 
+                    routerLink="/customer/register"
+                    role="button">
+                    SIGN UP
+                  </a>
+                </p>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="para-it-it-it">
+      <div class="container marketing">
+        <div class="row">
+          <div *ngFor="let animal of animals" class="col-lg-4">
+            <img class="rounded-circle"
+            [src]="'http://localhost:8080/image/'+ animal.img"
+              alt="Generic placeholder image" width="200" height="200">
+            <h2>{{animal.nameSpecies}}</h2> 
+            <p>Name creature : {{animal.name}}<br>
+              Special Features : {{animal.specialCharacteristics}}
+            </p>
+            <p><a class="btn btn-secondary" href="customer/animal/details/{{animal.id}}" role="button">View details
+                »</a></p>
+          </div> 
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <div class="row back-img">
+      <img src="/assets/img/home5.jpg">
+      <div class="dark-overlay">
+        <div class="col-md-7 text-right">
+          <h2 class="featurette-heading">And lastly, this one</h2>
+          <p class="lead">Take a moment to connect with the wonders of the deep and learn about the importance 
+            of protecting our oceans. Each exhibit is designed to educate, inspire, and bring you closer to nature. 
+            We’re excited to have you here and hope your visit leaves you with unforgettable memories!</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="para-it-it-it">
+      <div class="container marketing"> 
+        <div class="para-it-it-it container marketing row featurette">  
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Join the herd!!!</h2>
+            <p class="lead">Did you know that right in the heart of the city, there is a mysterious ocean world waiting for you? 
+              Aquariums are not only a place to relax,but also an opportunity to touch the wonders of the sea,
+              from colorful coral reefs to rare marine species.</p>
+            <p>See thousands of colorful fish.
+              Touch friendly sea creatures.
+              Immerse yourself in the majestic beauty of coral reefs and the ocean right before your eyes!</p> 
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto"
+              src="/assets/img/home6.jpg"
+              data-holder-rendered="true" style="width: 500px; height: 500px; border-radius: 20px;">
+          </div>
+        </div>
+      </div>
+      <div class="deco-bottom" aria-hidden="true">
+        <svg
+          class="deco-bottom"
+          viewBox="0 0 1440 137"
+          fill="none"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M77.3004 88.7309C50.8766 85.3383 23.6152 75.7499 0 62.0566V135.964H1438.35C1438.9 136 1439.45 136.036 1440 136.071V135.964H1438.35C1405.71 133.82 1371.9 130.566 1336.9 126.072C1157.18 102.995 1075.43 63.2328 1016.9 34.7572C984.242 18.8735 958.808 6.50187 927.616 2.4965C872.749 -4.54842 820.379 3.43595 793.658 24.9399C791.087 27.0068 788.507 29.0927 785.912 31.1903C722.082 82.786 649 141.861 475.951 119.642C411.108 111.315 378.649 99.3803 351.193 89.2851C331.071 81.8866 313.636 75.476 288.111 72.1986C244.318 66.5756 210.156 73.6791 176.906 80.5932C145.385 87.1474 114.684 93.5312 77.3756 88.7406L77.3004 88.7309Z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    
+      <div class="row featurette" style="background-color: rgb(9, 154, 202);">
+        <div class="col-md-5 order-md-2 recom">
+          <h2 class="featurette-heading">Meet the Aquatic Creatures</h2>
+          <p class="lead">Enjoy a day at the Aquarium, home to over 2,500 incredible species of fish from around the world! 
+            The Aquarium is your gateway to the natural world, where you can experience the sea, 
+            learn about the challenges that underwater creatures face, and the wonders of the ocean</p>
+        </div>
+        <div class="col-md-5 order-md-1 img-recom">
+          <img class="featurette-image img-fluid mx-auto" src="/assets/img/home1.jpg">
+        </div>
+      </div>
+</div>

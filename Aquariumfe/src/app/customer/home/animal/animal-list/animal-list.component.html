@@ -1,0 +1,55 @@
+<div class="header">
+    <div class="header-link">
+        <a href>Animals Introduction</a><i class="bi bi-chevron-right"></i>
+        <a href="animal">Animals</a>
+    </div>
+    <h1>Animals</h1>
+    <p class="header-bold-text">Not all animals listed are currently on exhibit at the Aquarium. This
+        is a list of animals that live in the ocean.</p>
+    <p class="header-text">Please enjoy learning about the many creatures who call the ocean home! </p>
+</div>
+<div class="search-container">
+    <input type="text" [(ngModel)]="searchTerm"
+        placeholder="Search for an animal..."
+       (keyup.enter)="onSearch()" />
+</div>
+
+<section class="animal-section">
+    <div *ngFor="let animal of animals" class="animal-card">
+        <a href="customer/animal/details/{{animal.id}}" class="card-link">
+            <img [src]="'http://localhost:8080/image/'+ animal.img[1].imgName" alt="Sea Otter">
+            <div class="animal-content">
+                <p class="animal-type">ANIMAL</p>
+                <h3 class="name">{{animal.name}}</h3>
+                <p class="content ellipsis">{{animal.exhibitStatus}}</p>
+                <div class="see-more">
+
+                    <p><i class="bi bi-arrow-right-circle see-more-icon"></i>See
+                        more</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+
+<div class="pagination-wrapper" [ngClass]="transitionClass">
+    <svg class="btn btn--prev" (click)="goToPreviousPage()" height="96" viewBox="0 0 24 24" width="96" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"/>
+      <path d="M0-.5h24v24H0z" fill="none"/>
+    </svg>
+  
+    <div class="pagination-container">
+      <div class="little-dot little-dot--first"></div>
+      <div class="little-dot">
+        <div class="big-dot-container">
+          <div class="big-dot"></div>
+        </div>
+      </div>
+      <div class="little-dot little-dot--last"></div>
+    </div>
+  
+    <svg class="btn btn--next" (click)="goToNextPage()" height="96" viewBox="0 0 24 24" width="96" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/>
+      <path d="M0-.25h24v24H0z" fill="none"/>
+    </svg>
+</div>
