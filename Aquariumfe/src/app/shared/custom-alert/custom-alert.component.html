@@ -1,0 +1,24 @@
+  
+<!-- <div *ngIf="message" class="popup-overlay" id="popupOverlay">
+
+    <div *ngIf="message" class="popup-overlay">
+      <div class="popup" id="popup">
+     
+        <img src="/assets/img/tick.png">
+        <h2>Warning!</h2>
+        <p>{{ message }}</p>
+        <button type="button" (click)="closeAlert()">Close</button>
+      </div>
+    </div>
+  No newline at end of file
+    </div> -->
+    <div *ngIf="message" class="popup-overlay" id="popupOverlay">
+      <div class="popup" [ngClass]="alertType === 'success' ? 'popup-success' : 'popup-warning'" id="popup">
+        <img *ngIf="alertType === 'success'" src="">
+        <img *ngIf="alertType === 'warning'" src="/assets/img/tick.png">
+        <h2>{{ alertType === 'success' ? 'Success!' : 'Warning!' }}</h2>
+        <p>{{ message }}</p>
+        <button type="button" (click)="closeAlert()">Close</button>
+      </div>
+    </div>
+    
