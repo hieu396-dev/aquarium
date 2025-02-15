@@ -1,0 +1,52 @@
+<div class="body">
+    <h1>Feedback</h1>
+    <div class="form-box"> 
+        <form [formGroup]="feedbackForm" (ngSubmit)="submitFeedback()">
+            <label for="uname">
+                <i class="bi bi-person"></i>
+                Name
+            </label>
+            <input type="text" id="uname" 
+                   name="uname" value="{{this.userInfor.lastName}}" readonly>
+
+            <label for="email">
+                <i class="bi bi-envelope"></i>
+                Email Address
+            </label>
+            <input type="email" id="email" 
+                   name="email" value="{{this.userInfor.email}}" readonly>
+
+            <label for="phone">
+                <i class="bi bi-telephone"></i>
+                Phone No
+            </label>
+            <input type="tel" id="phone" 
+                   name="phone" value="{{this.userInfor.phone}}" readonly>
+            <label>
+                <i class="bi bi-emoji-smile"></i>
+                Do you satisfy with our service?
+            </label>
+            <div class="radio-group">
+                <input type="radio" id="yes" 
+                       name="satisfy" value="yes" checked>
+                <label for="yes">Yes</label>
+
+                <input type="radio" id="no" 
+                       name="satisfy" value="no">
+                <label for="no">No</label>
+            </div>
+
+            <label for="msg">
+                <i class="bi bi-chat-dots"></i>   
+                Write your Suggestions:
+            </label>
+            <textarea id="msg" name="msg" formControlName="content"
+                      rows="4" cols="10" required>
+            </textarea>
+            <button type="submit">
+                Submit
+            </button> 
+        </form>
+    </div>
+</div>
+    

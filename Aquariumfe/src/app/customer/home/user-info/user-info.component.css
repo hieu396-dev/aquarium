@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 5px;
+  }
+  
+  .pagination-controls button {
+    width: 60px; 
+    padding: 5px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  .pagination-controls button[disabled] {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .pagination-controls span {
+    font-weight: bold;
+    font-size: 12px;
+  }
+  
+  
+.content-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1400px;
+    width: 100%;
+    padding: 20px;
+    margin: 140px 0 50px;
+}
+
+.user-info-container, .ticket-table-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
+}
+
+.user-info-container {
+    flex: 1; /* 1 part width */
+}
+
+.ticket-table-container {
+    flex: 2; /* 2 parts width, making it wider than the user info form */
+    max-width: 800px;
+}
+
+.user-info-container h1, .ticket-table-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form label {
+    font-weight: bold;
+    color: #555;
+    display: block;
+    margin-top: 15px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.password-field {
+    display: flex;
+    align-items: center;
+}
+
+.password-field input {
+    flex-grow: 1;
+}
+
+.edit-icon {
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #007bff;
+}
+
+.edit-icon:hover {
+    color: #0056b3;
+}
+
+.password-change-fields {
+    margin-top: 15px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Ticket Table Styles */
+.ticket-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ticket-table-container th, .ticket-table-container td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.ticket-table-container th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+
+.ticket-table-container tr:hover {
+    background-color: #f9f9f9;
+}
+.hand:hover {
+    cursor: pointer;
+  }

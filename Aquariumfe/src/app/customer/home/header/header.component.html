@@ -1,0 +1,65 @@
+<header>
+    <nav class="navbar-dark fixed-top header" [class.hidden]="isHeaderHidden">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="customer" class="logo-link"><img src="/assets/img/header8.png" />Blue Planet Aquarium</a>
+                </div>
+                <div class="actions">
+                    <p *ngIf="checkLogin(); else loginRegister" class="username">{{ userInfo?.firstName }}</p>
+                    <div *ngIf="checkLogin()" class="user-dropdown" #userDropdown>
+                        <label class="user icon-right" for="user-dropdown-toggle">
+                            <i class="bi bi-person-circle user-icon"></i>
+                        </label>
+                        <input type="checkbox" id="user-dropdown-toggle" class="user-dropdown-toggle" />
+                        <div class="user-dropdown-content">
+                            <a routerLink="/customer/userInfo" class="dropdown-item">User Info</a>
+                            <a class="dropdown-item" (click)="logout()">Log Out</a>
+                        </div>
+                    </div>
+                    
+                    <ng-template #loginRegister>
+                      <a href="customer/login" class="action icon-left">
+                        <i class="bi bi-door-open-fill"></i> LOGIN
+                      </a>
+                      <a href="customer/register" class="action icon-left">
+                        <i class="bi bi-box-arrow-in-right"></i> REGISTER
+                      </a>
+                    </ng-template>
+                  </div>
+            </div>
+            <div class="divider"></div>
+            <div class="header-bottom">
+                <nav class="navigation">
+                    <a routerLink="/customer/event" class="nav-a">EVENT</a>
+                    <!-- Animals Dropdown -->
+                    <div class="dropdown" #animalsDropdown>
+                        <label class="dropbtn icon-right" for="dropdown-toggle">ANIMALS <i class="bi bi-caret-down-fill"></i></label>
+                        <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle" />
+                        <div class="dropdown-content" #dropdownContent>
+                            <div class="dropdown-inner">
+                                <div class="category-list">
+                                    <h2 class="animals-title">Explore Animal Categories</h2>
+                                    <ul class="category-options">
+                                        <li><a (click)="filterAnimals('all')" class="list-opt">All</a></li>
+                                    </ul>
+                                    <ul class="category-options">
+                                        <li><a routerLink="/customer/animal/animalPage" class="list-opt">Animal Page</a></li>
+                                    </ul>
+                                    <ul class="category-options" *ngFor="let s of species">
+                                        <li><a (click)="filterAnimals(s.name)" class="list-opt">{{s.name}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="nav-a" routerLink="/customer/visit">VISIT</a>
+                    <a class="nav-a" routerLink="/customer/feedback">FEEDBACK</a>
+                </nav>
+                <div class="ticket">
+                    <a routerLink="/customer/buy-ticket" class="ticket-button icon-right">BUY TICKETS HERE<i class="bi bi-ticket-detailed-fill"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

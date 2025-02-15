@@ -1,0 +1,657 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  transition: transform 0.3s ease;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.header.hidden {
+  transform: translateY(-100%);
+}
+
+.container {
+  margin: 0;
+}
+
+/* Media Queries */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+/* Header Styles */
+.header {
+  /* background-color: #011822;
+    color: #fff; */
+  padding: 1rem 2rem 0 1rem;
+  background-color: rgb(21, 21, 84);
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 140px;
+  border-radius: 0px 50px 100px 50px / 100px 0px 50px 75px;
+  width: 95%;
+  margin-left: 31px;
+}
+
+/* Header Flex Layout */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1% 1% 1%;
+  padding: 0 3% 0 0;
+}
+
+.header-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3%;
+}
+
+/* Responsive Adjustment for Header */
+@media (max-width: 768px) {
+  .header-top {
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: flex-start;
+    /* Align items to the start */
+  }
+
+  .header-bottom {
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: flex-start;
+    /* Align items to the start */
+    width: 100%;
+    /* Full width */
+  }
+
+  .actions {
+    justify-content: flex-end;
+    /* Align actions to the right */
+    width: 100%;
+    /* Full width for actions */
+    gap: 1rem;
+    /* Reduce gap on smaller screens */
+  }
+
+  .navigation {
+    flex-direction: column;
+    /* Stack navigation links vertically */
+    gap: 10px;
+    /* Spacing between links */
+    width: 100%;
+    /* Full width */
+  }
+
+  .nav-a {
+    padding: 10px;
+    /* Adjust padding for smaller screens */
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: #ededee;
+  font-size: x-large;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 80px;
+  margin-right: 10px;
+  width: 140px;
+  text-decoration: none;
+}
+
+.logo-link {
+  text-decoration: none !important;
+  color: white;
+  
+}
+.logo-link:hover {
+  text-decoration: none !important;
+  
+}
+
+/* Divider */
+.divider {
+  background-color: #757575;
+  height: 1px;
+  width: 100%;
+  align-items: center;
+}
+
+/* Actions (Login/Register) */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  align-items: center;
+}
+
+.actions .action {
+  color: #39c0f5ef;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-size: medium;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.2s;
+}
+
+.actions .action:hover {
+  color: #ffffffdb;
+  transform: scale(1.05);
+}
+
+.username {
+  color: #f7f7f7;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.username:hover {
+  cursor: pointer;
+}
+
+.user-icon {
+  font-size: 2rem;
+  color: #dededee3;
+  transition: color 0.3s ease;
+}
+
+.user-icon:hover {
+  font-size: 2rem;
+  color: #007bff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+
+/* User Dropdown Styles */
+.user-dropdown {
+  position: relative;
+}
+
+.user-dropdown-toggle {
+  display: none; /* Hide the checkbox */
+}
+
+/* Dropdown Content */
+.user-dropdown-content {
+  opacity: 0;
+  transform: translateY(-10px); /* Start 10px above */
+  position: absolute;
+  right: 0;
+  top: 40px; /* Adjust based on icon size */
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  min-width: 150px;
+  z-index: 1;
+  pointer-events: none; /* Prevent interaction when hidden */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show dropdown when checkbox is checked */
+.user-dropdown-toggle:checked ~ .user-dropdown-content {
+  opacity: 1;
+  transform: translateY(0); /* Slide into place */
+  pointer-events: auto; /* Enable interaction */
+}
+
+.dropdown-item {
+  display: block;
+  padding: 10px;
+  color: #003a4e;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #39c0f5;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+
+
+/* Navigation Links */
+.navigation {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.nav-a {
+  color: #c5c5c5;
+  text-decoration: none;
+  padding: 16px 20px;
+  font-size: medium;
+  font-weight: 600;
+  border-bottom: 4px solid rgb(21, 21, 84);
+  transition: border-bottom 0.3s ease, color 0.3s ease;
+}
+
+.nav-a:hover {
+  border-bottom: 4px solid #39c0f5;
+  color: #efeff0;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  color: #c5c5c5;
+  text-decoration: none;
+  font-size: medium;
+  font-weight: 600;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  transition: border-bottom 0.3s ease, color 0.3s ease;
+  border-bottom: 4px solid rgb(21, 21, 84);
+}
+
+.dropbtn:hover {
+  border-bottom: 4px solid #39c0f5;
+  color: #efeff0;
+}
+
+
+/* Checkbox Hack for Clickable Dropdown */
+.dropdown-toggle {
+  display: none;
+  /* Hide the checkbox */
+}
+
+/* Dropdown Content */
+.dropdown-content {
+  opacity: 0;
+  transform: translateY(-5px); /* Start 10px above */
+  display: block; /* Keep display block for transition */
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 350px;
+  height: 470px;
+  overflow-y: auto;
+  z-index: 1;
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  left: 0;
+  border-radius: 0 0 30px 30px;
+  margin-left: -150px;
+  pointer-events: none; /* Prevent interaction when hidden */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show dropdown when checkbox is checked */
+.dropdown-toggle:checked ~ .dropdown-content {
+  opacity: 1;
+  transform: translateY(0); /* Slide into place */
+  pointer-events: auto; /* Enable interaction */
+}
+
+.category-options {
+  columns: 2; /* Divide the list into two columns */
+  -webkit-columns: 2; /* For Safari */
+  -moz-columns: 2; /* For Firefox */
+}
+
+.dropdown-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+}
+
+/* Category List */
+.category-list {
+  flex: 1;
+  padding-right: 10px;
+}
+
+.animals-title {
+  color: #00121a;
+  font-weight: bold;
+  font-size: large;
+  padding: 10px 0;
+}
+
+/* Category Options List */
+/* Category Options List */
+.category-options {
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+}
+
+.category-options li {
+  margin: 5px 0;
+}
+
+.list-opt {
+  color: #00121a;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  font-weight: 600;
+  position: relative;
+}
+
+/* Subtext Styling */
+.subtext {
+  font-weight: 400;
+  font-size: 0.9em;
+  color: #6a6a6a;
+  display: block;
+  margin-left: 20px; /* Indent subtext slightly */
+}
+
+.list-opt:hover {
+  background-color: #003a4e;
+  color: white;
+}
+
+.list-opt:hover .subtext {
+  color: #bfbfbf; /* Slightly lighter subtext on hover */
+}
+
+
+/* Darken background when dropdown is open */
+body {
+  transition: background-color 0.3s ease;
+  /* Smooth background transition */
+}
+
+
+.event-list {
+  flex: 1;
+  /* Allow the event list to take up remaining space */
+  padding-right: 10px;
+  /* Add some spacing between the list and image */
+}
+
+.animals-title {
+  color: #00121a;
+  font-weight: bold;
+  font-size: large;
+  padding: 10px 0;
+}
+
+.list-opt {
+  color: #00121a;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+  margin: 5px 0;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.list-opt:hover {
+  background-color: #003a4e;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.a-link-holder {
+  margin: 20px 20px 20px 0;
+}
+
+.a-link {
+  color: #003a4e !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.a-link:hover {
+  color: #003a4e !important;
+  font-weight: 600;
+  text-decoration: underline 2px;
+}
+
+.a-link-icon {
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+
+.dropdown-img-holder {
+  width: 60%;
+}
+
+.dropdown-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  opacity: 1; /* Start fully opaque */
+  transition: opacity 0.1s ease-in-out; /* Smooth transition for opacity */
+}
+
+/* Hidden class to fade out the image */
+.hidden {
+  opacity: 0; /* Set opacity to 0 to fade out */
+}
+
+.ticket {
+  font-weight: bold;
+  width: 300px;
+  text-align: center;
+}
+
+.ticket-button {
+  background-color: #007bff;
+  color: #ededed;
+  font-size: 16px;
+  padding: 7px 10px;
+  border: none;
+  border-radius: 8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+/* Icon Styling */
+.icon-left {
+  display: inline-flex;
+  align-items: center;
+}
+
+.icon-left i {
+  margin-right: 8px;
+}
+
+.icon-right {
+  display: inline-flex;
+  align-items: center;
+}
+
+.icon-right i {
+  margin-left: 8px;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  margin-bottom: 15px;
+}
+
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: text-decoration 0.3s ease;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-link {
+  color: #fff;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #39c0f5;
+}
+
+.carousel-item {
+  margin-bottom: 4em;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 3rem;
+  z-index: 10;
+  padding-bottom: 125px;
+  margin-right: 50px;
+}
+
+.carousel-item {
+  height: 45rem;
+  background-color: #777;
+}
+
+.carousel-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 45rem;
+}
+
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.marketing h2 {
+  font-weight: 400;
+}
+
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+  margin-bottom: 4em;
+}
+
+.featurette-divider {
+  margin: 5rem 0;
+}
+
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+}
+
+.carousel-caption p {
+  margin-bottom: 1.25rem;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.featurette-heading {
+  font-size: 50px;
+}
+
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+.header .logo img {
+  height: 65px;
+  margin-right: 10px;
+  width: 110px;
+}
+
+@media (max-width: 768px) {
+  .logo {
+      display: none;
+  }
+  .header-top, .header-bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .nav-a, .ticket-button {
+      font-size: 14px;
+  }
+  .navigation {
+      display: none;
+      flex-direction: column;
+  }
+  .header-bottom.active .navigation {
+      display: flex;
+  }
+}
+
+@media (min-width: 769px) {
+  .navigation {
+      display: flex;
+  }
+}

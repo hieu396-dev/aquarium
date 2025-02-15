@@ -1,0 +1,364 @@
+/* Global Styles */
+* {
+    font-family: "Poppins", sans-serif;
+    transition: all 0.3s ease;
+    /* Apply transition to all elements */
+}
+
+.header {
+    color: white;
+    padding: 200px 70px 50px;
+    width: 100%;
+    background-color: #094d78;
+}
+
+.background-card {
+    background-color: #094d78;
+    padding: 0 0 40px;
+}
+
+.species-name {
+    font-size: 3rem;
+    margin: 0;
+    font-weight: bold;
+    color: white;
+    padding-top: 30px;
+}
+
+.science-name {
+    color: white;
+    font-weight: 700;
+    margin: 10px 10px;
+    font-size: x-large;
+    font-style: oblique;
+}
+
+.header a {
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+}
+
+.header a:hover {
+    font-weight: bold;
+}
+
+.header-icon {
+    font-size: 0.7rem;
+    color: white;
+    margin: 0 15px;
+}
+
+.header-link {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.animal-detail-card {
+    max-width: 1400px;
+    margin: 0 10% 50px;
+    background-color: #132632;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 2.5rem;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgb(0 0 0 / 62%);
+}
+
+.animal-top-card {
+    display: flex;
+    width: 100%;
+    margin: 0 0 30px 0;
+}
+
+.animal-image {
+    position: relative;
+    text-align: center;
+    width: 700px;
+    height: 400px;
+    overflow: hidden; /* Hide overflow to maintain consistent image size */
+    margin: auto;
+}
+
+.animal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.slide-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slide-controls button {
+    background-color: rgb(0 0 0 / 0%);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    width: 48px;
+}
+
+.slide-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+.animal-image .tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+}
+
+.animal-info {
+    margin: 0 0 0 50px;
+}
+
+
+.animal-info h2 {
+    font-size: 2.1rem;
+    margin: 1rem 0 1.5rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+.description {
+    font-size: 1.12rem;
+    color: #f2f2f2;
+    line-height: 1.8;
+}
+
+.animal-details {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr;
+    height: 250px;
+    margin: 60px 0 0;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.detail p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    margin-left: 33px;
+}
+
+
+.detail-title {
+    font-weight: bold;
+    color: #70b7e5;
+    font-size: 1.4rem;
+}
+
+.detail-icon {
+    margin-right: 10px;
+}
+
+.row-detail {
+    padding: 0 30px;
+    display: flex;
+    row-gap: 10px;
+    flex-direction: column;
+}
+
+.row-detail-middle {
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    padding: 0 30px;
+    display: flex;
+    row-gap: 10px;
+    flex-direction: column;
+}
+
+.animal-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    margin: 40px 20px 100px;
+}
+
+/* Animal Card */
+.animal-card {
+    background-color: white;
+    width: calc(33% - 20px);
+    max-width: 260px;
+    height: 500px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* Use flexbox to arrange items vertically */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.animal-card:hover .animal-content {
+    color: white;
+    background-color: #002a54;
+}
+
+.animal-card a.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.animal-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Animal Content */
+.animal-content {
+    padding: 15px;
+    text-align: left;
+    background-color: #f9f9f9;
+    flex-grow: 1;
+    /* Allow content to grow */
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    height: 62%;
+}
+
+.animal-card:hover .animal-type,
+.animal-card:hover .name,
+.animal-card:hover .animal-content p {
+    color: white;
+}
+
+/* Text Styles */
+.animal-type {
+    font-size: 0.875rem;
+    color: #0078a3;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.name {
+    font-size: 1.7rem;
+    color: #002a3d;
+    margin: 10px 0;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.content {
+    color: #002a3d;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    overflow: hidden;
+    /* Hide overflowing content */
+    text-overflow: ellipsis;
+    /* Show ellipsis for overflow */
+    display: -webkit-box;
+    /* Enable multi-line ellipsis */
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    /* Limit to 5 lines */
+}
+
+/* See More */
+.see-more {
+    margin-top: auto;
+    /* Push the "See more" text to the bottom */
+    color: #0078a3;
+    font-weight: bold;
+    cursor: pointer;
+    /* Make it look clickable */
+}
+
+.see-more:hover {
+    color: #00567d;
+    /* Change color on hover */
+}
+
+/* See More Icon */
+.see-more-icon {
+    margin: 0 10px 0 0;
+    font-weight: 600;
+    font-size: larger;
+}
+
+.more-species {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.aquarium-banner {
+    background-image: url('/assets/img/bg5.jpg');
+    /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    text-align: center;
+    height: 300px;
+    width: 100%;
+}
+
+.aquarium-banner h2 {
+    font-size: 2rem;
+    margin: 40px 0 20px;
+}
+
+.aquarium-banner p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+.similar-species {
+    margin: 70px 70px 0px;
+}
+
+.similar-species h1 {
+    font-weight: 600;
+    font-size: 2.2rem;
+}
+
+.similar-species p {
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-style: oblique;
+    padding: 0 12px;
+}

@@ -1,0 +1,326 @@
+<div class="layout-content">
+  <div>
+      <div id="block-ud-content">
+          <div class="udg-device" aria-hidden="true"></div>
+          <div class="udg-tickets">
+              <div class="container">
+                  <h1>Book Your Tickets</h1>
+
+                  <!-- <section class="step-wizard">
+                      <ul class="step-wizard-list">
+                          <li class="step-wizard-item current-item">
+                              <span class="progress-count">1</span>
+                              <span class="progress-label">Time</span>
+                          </li>
+                          <li class="step-wizard-item">
+                              <span class="progress-count">2</span>
+                              <span class="progress-label">Choose Ticket</span>
+                          </li>
+                          <li class="step-wizard-item">
+                              <span class="progress-count">3</span>
+                              <span class="progress-label">Check</span>
+                          </li>
+                          <li class="step-wizard-item">
+                              <span class="progress-count">4</span>
+                              <span class="progress-label">Success</span>
+                          </li>
+                      </ul>
+                  </section> -->
+                  <!-- Step 1 -->
+                  <div *ngIf="currentStep === 1">
+                    <section class="step-wizard">
+                      <ul class="step-wizard-list">
+                          <li class="step-wizard-item current-item">
+                              <span class="progress-count">1</span>
+                              <span class="progress-label">Time</span>
+                          </li>
+                          <li class="step-wizard-item">
+                              <span class="progress-count">2</span>
+                              <span class="progress-label">Choose Ticket</span>
+                          </li>
+                          <li class="step-wizard-item">
+                              <span class="progress-count">3</span>
+                              <span class="progress-label">Check</span>
+                          </li>
+                          <li class="step-wizard-item">
+                              <span class="progress-count">4</span>
+                              <span class="progress-label">Success</span>
+                          </li>
+                      </ul>
+                    </section>
+                    <div class="row sib">
+                      <div class="col-12 col-lg-7 box"> 
+                        <div class="js-panel-holder" style="height: 406.6px">
+                          <div class="panel js-panel right" data-step="2">
+                            <p class="guidance">When would you like to visit?</p>
+                            <div class="avail">
+                              <div class="list">
+                                <label class="item">
+                                  <input type="radio" name="selectedTime" [(ngModel)]="selectedTime" value="07:00" />
+                                  <div class="item-content row no-gutters">
+                                    <span class="st">07:00</span>
+                                  </div>
+                                </label>
+                                <label class="item">
+                                  <input type="radio" name="selectedTime" [(ngModel)]="selectedTime" value="10:00" />
+                                  <div class="item-content row no-gutters">
+                                    <span class="st">10:00</span>
+                                  </div>
+                                </label>
+                                <label class="item">
+                                  <input type="radio" name="selectedTime" [(ngModel)]="selectedTime" value="12:00" />
+                                  <div class="item-content row no-gutters">
+                                    <span class="st">12:00</span>
+                                  </div>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  
+                    <div class="col-12 col-lg-7 box">
+                      <div class="js-panel-holder" style="height: 406.6px">
+                        <div class="panel js-panel middle active" data-step="1">
+                          <div class="date-item date-item-dp caret-right active">
+                            <span id="dp-label">Select a date</span>
+                            <input
+                              aria-labelledby="dp-label"
+                              type="date"
+                              name="selectedDate"
+                              [min]="minDate"
+                              [(ngModel)]="selectedDate"
+                              (change)="onDateChange()"
+                            />
+
+                          </div>
+                          <div class="action">
+                            <button class="cta cta-next" (click)="confirmStepOne()">Confirm and continue</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Step 2 -->
+                  <div *ngIf="currentStep === 2">
+                    <section class="step-wizard">
+                      <ul class="step-wizard-list">
+                          <li class="step-wizard-item ">
+                              <span class="progress-count">1</span>
+                              <span class="progress-label">Time</span>
+                          </li>
+                          <li class="step-wizard-item current-item">
+                              <span class="progress-count">2</span>
+                              <span class="progress-label">Choose Ticket</span>
+                          </li>
+                          <li class="step-wizard-item">
+                              <span class="progress-count">3</span>
+                              <span class="progress-label">Check</span>
+                          </li>
+                          <li class="step-wizard-item">
+                              <span class="progress-count">4</span>
+                              <span class="progress-label">Success</span>
+                          </li>
+                      </ul>
+                    </section>
+                    <div class="col-12 col-lg-7 box">
+                      <div class="row sib">
+                        <div class="panel js-panel right" data-step="3">
+                            <p class="guidance">Select your tickets</p>
+                            <div class="products" data-type="standard">
+                              <div class="item" *ngFor="let type of types; let i = index">
+                                <div class="item-content row">
+                                    <div class="col-12 col-lg-5 col-xl-5 col-xxl-6 prod-desc">
+                                        {{ type.typeName }}
+                                    </div>
+                                    <div class="col-6 col-lg-3 col-xl-3 col-xxl-3 prod-price ar">
+                                        £{{ type.price }}
+                                    </div>
+                                    <div class="col-6 col-lg-4 col-xl-4 col-xxl-3 ar nww ct">
+                                        <a role="button" class="prod-adj off toggle" (click)="changeNum(-1, type.id)">-</a>
+                                        <input 
+                                            type="number" 
+                                            min="0" 
+                                            max="15" 
+                                            class="prod-count" 
+                                            [value]="this.getQuantity(type.id)"
+                                            />
+                                        <a role="button" class="prod-adj" (click)="changeNum(1, type.id)">+</a>
+                                    </div>
+                                    <div class="col-12 col-lg-6 col-xl-6 col-xxl-6 mhide">
+                                        <p class="type-desc">{{ type.description }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            </div>
+                            <div class="action step2">
+                                <button class="cta cta-lowlight" (click)="prevStep()">Go back</button>
+                                <button class="cta cta-next" (click)="confirmStepTwo()">Confirm and continue</button>
+                                </div>
+                          </div> 
+                    </div>
+                    </div>                   
+                  </div>
+                    <!-- Step 3 -->
+                  <div *ngIf="currentStep === 3">
+                    <section class="step-wizard">
+                      <ul class="step-wizard-list">
+                          <li class="step-wizard-item ">
+                              <span class="progress-count">1</span>
+                              <span class="progress-label">Time</span>
+                          </li>
+                          <li class="step-wizard-item">
+                              <span class="progress-count">2</span>
+                              <span class="progress-label">Choose Ticket</span>
+                          </li>
+                          <li class="step-wizard-item current-item">
+                              <span class="progress-count">3</span>
+                              <span class="progress-label">Check</span>
+                          </li>
+                          <li class="step-wizard-item">
+                              <span class="progress-count">4</span>
+                              <span class="progress-label">Success</span>
+                          </li>
+                      </ul>
+                    </section>
+                    <div class="col-12 col-lg-7 box">
+                      <div class="row sib">
+                        <div class="panel js-panel right" data-step="3">
+                            <p class="guidance">Order Detail</p>
+                            <div class="products" data-type="standard">
+                              <div class="card-body">
+                                <div class="inf-order">
+                                  <h3>Time information</h3>
+                                  <p>Day: {{selectedDate}}</p>
+                                  <p>Time: {{selectedTime}}</p> 
+                                </div>
+                                <ul class="list-group">
+                                    <li *ngFor="let t of typeQuantity"  class="list-group-item d-flex justify-content-between align-items-center" >
+                                        <div *ngIf="t.quantity > 0">
+                                            <p style="font-size: 20px;"><strong style="font-size: 20px;">Type Ticket:</strong> {{this.getTypeById(t.typeId).typeName}}</p>
+                                            <p style="font-size: 20px;"><strong style="font-size: 20px;">Quantity:</strong> {{t.quantity}}</p>
+                                        </div>
+                                        <button *ngIf="t.quantity > 0" class="btn btn-danger btn-sm" (click)="removeTypeQuantity(t.typeId)">Delete</button>
+                                    </li>
+                                </ul>
+                            </div>                        
+                            </div>
+                            <p class="guidance" style="padding-top: 50px;">Do you want to use points?</p>
+                            <div class="products" data-type="standard"> 
+                                <div class="form-group">
+                                  <label for="score" style="font-size: 20px;">Score:</label>
+                                  <input type="number" class="form-control" id="score" [(ngModel)]="score" name="score" placeholder="Enter score" required>
+                                </div>
+                            </div>
+                            <div class="action step2">
+                                <button class="cta cta-lowlight" (click)="prevStep()">Go back</button>
+                                <button class="cta cta-next" (click)="confirmStepThree()">Confirm and continue</button>
+                                </div>
+                          </div> 
+                    </div>
+                    </div>                  
+                  </div>
+                  <!-- Step 4 -->
+                  <div *ngIf="currentStep === 4">
+                    <section class="step-wizard">
+                      <ul class="step-wizard-list">
+                          <li class="step-wizard-item ">
+                              <span class="progress-count">1</span>
+                              <span class="progress-label">Time</span>
+                          </li>
+                          <li class="step-wizard-item">
+                              <span class="progress-count">2</span>
+                              <span class="progress-label">Choose Ticket</span>
+                          </li>
+                          <li class="step-wizard-item">
+                              <span class="progress-count">3</span>
+                              <span class="progress-label">Check</span>
+                          </li>
+                          <li class="step-wizard-item current-item">
+                              <span class="progress-count">4</span>
+                              <span class="progress-label">Success</span>
+                          </li>
+                      </ul>
+                    </section>
+                    <div class="col-12 col-lg-7 box">
+                      <div class="row sib">
+                        <div class="panel js-panel right" data-step="4">
+                            <p class="guidance">Book Success!</p>
+                            <div class="products" data-type="standard">
+                              <div class="card-body">
+                                <ul class="list-group">
+                                    <li *ngFor="let t of typeQuantity" class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div *ngIf="t.quantity > 0">
+                                            <p style="font-size: 20px;"><strong style="font-size: 20px;">Type Ticket:</strong> {{this.getTypeById(t.typeId).typeName}}</p>
+                                            <p style="font-size: 20px;"><strong style="font-size: 20px;">Quantity:</strong> {{t.quantity}}</p>
+                                        </div>
+                                        <div *ngIf="t.quantity > 0" class="price" style="font-size: 20px;">
+                                          £{{t.totalPrice}}
+                                        </div>
+                                    </li>
+                                </ul>    
+                                <!-- <hr class="featurette-divider">                            -->
+                                <ul class="list-group"> 
+                                  <div class="final"></div>
+                                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <strong style="font-size: 20px;">Total Price:</strong>
+                                    </div>
+                                    <div class="price" style="font-size: 20px;">
+                                      £{{this.totalPrice}}
+                                    </div>
+                                  </li>
+                                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <strong style="font-size: 20px;">Score:</strong>
+                                    </div>
+                                    <div class="price" style="font-size: 20px;">
+                                      {{this.score}}
+                                    </div>
+                                  </li>
+                                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <strong style="font-size: 20px;">Discount:</strong>
+                                    </div>
+                                    <div class="price" style="font-size: 20px;">
+                                      {{this.discount}}
+                                    </div>
+                                  </li>
+                                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <strong style="font-size: 20px;">The price you pay:</strong>
+                                    </div>
+                                    <div class="price" style="font-size: 20px;">
+                                      £{{this.priceToPay}}
+                                    </div>
+                                  </li>
+                                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <strong style="font-size: 20px;">Payment Method:</strong>
+                                    </div>
+                                    <div class="price" style="font-size: 20px;">
+                                      CASH
+                                    </div>
+                                  </li>
+                                </ul>
+                            </div>                        
+                            </div>
+                            <div class="action step2">
+                              <button class="cta cta-lowlight" (click)="prevStep()">Go back</button>
+                              <button class="cta cta-next" (click)="confirmStepFour()">Confirm and continue</button>
+                                </div>
+                          </div> 
+                    </div>
+                    </div>                   
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
