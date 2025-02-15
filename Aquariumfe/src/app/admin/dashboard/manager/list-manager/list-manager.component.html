@@ -1,0 +1,37 @@
+<div class="content">
+    <div class="mt-5">
+      <h2>Employee List</h2>
+      <button *ngIf="hasRole(['ADMINISTRATOR'])" (click)="addUser()" class="btn btn-primary mb-3">Add New Admin</button>
+      <input 
+      type="text" 
+      id="searchInput" 
+      [(ngModel)]="searchTerm" 
+      (input)="searchUser()" 
+      placeholder="Search User..."
+    />
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Role</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let User of filteredListmana">
+            <td>{{ User.firstName }}</td>
+            <td>{{ User.lastName }}</td>
+            <td>{{ User.email }}</td>
+            <td>{{ User.address }}</td>
+            <td>{{ User.phone }}</td>
+            <td>{{ User.role.roleName }}</td>
+            <td (click)="toggleStatus(User)" >{{ User.accountStatus }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

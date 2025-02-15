@@ -1,0 +1,59 @@
+<div class="container">
+    <h2>Create Admin</h2>
+    <form (ngSubmit)="onSubmit()">
+  
+      <div class="form-group">
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" [(ngModel)]="adminForm.firstName" name="firstName"
+               class="form-control" required maxlength="100" />
+        <div *ngIf="firstNameError" class="text-danger">{{ firstNameError }}</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" [(ngModel)]="adminForm.lastName" name="lastName" class="form-control"
+               required />
+        <div *ngIf="lastNameError" class="text-danger">{{ lastNameError }}</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" [(ngModel)]="adminForm.email" name="email" class="form-control" required />
+        <div *ngIf="emailError" class="text-danger">{{ emailError }}</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" [(ngModel)]="adminForm.password" name="password" class="form-control"
+               required />
+        <div *ngIf="passwordError" class="text-danger">{{ passwordError }}</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" [(ngModel)]="adminForm.phone" name="phone" class="form-control" required />
+        <div *ngIf="phoneError" class="text-danger">{{ phoneError }}</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" id="address" [(ngModel)]="adminForm.address" name="address" class="form-control" />
+        <div *ngIf="addressError" class="text-danger">{{ addressError }}</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="roleId">Role</label>
+        <select id="roleId" [(ngModel)]="adminForm.roleId" name="roleId" class="form-control" required>
+          <option *ngFor="let role of roles" [value]="role.id">{{ role.roleName }}</option>
+        </select>
+        <div *ngIf="roleIdError" class="text-danger">{{ roleIdError }}</div>
+      </div>
+      <div class="form-buttons">
+        <button type="submit" class="btn btn-primary">
+          Create
+        </button>
+        <button type="button" (click)="goBack()">Back</button>
+      </div>
+    </form>
+  </div>
+  

@@ -1,0 +1,33 @@
+.content {
+    margin-left: 250px;
+    padding: 40px;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.table th {
+    background-color: #34495e;
+    color: white;
+    font-weight: 600;
+}
+th {
+    cursor: pointer;
+  }
+  
+  
+  th:hover {
+    background-color: #f1f1f1;
+  }
+  
+ 
+  th.sorted-asc::after {
+    content: " ↑";
+    font-size: 12px;
+  }
+  
+  th.sorted-desc::after {
+    content: " ↓";
+    font-size: 12px;
+  }
+  

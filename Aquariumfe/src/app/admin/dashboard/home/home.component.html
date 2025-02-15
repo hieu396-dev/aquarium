@@ -1,0 +1,46 @@
+<div class="content">
+    <div class="row">
+        <div class="col-md-4">
+            <a routerLink="/admin/dashboard/customer" class="card text-center"
+                style="text-decoration: none; color: black;">
+                <div class="card-body">
+                    <h5 class="card-title">Total Users</h5>
+                    <p class="card-text display-4">{{quantityUser}}</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Total Sales</h5>
+                    <p class="card-text display-4">${{totalAmount}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <a routerLink="/admin/dashboard/order" class="card text-center"
+                style="text-decoration: none; color: black;">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Orders</h5>
+                        <p class="card-text display-4">{{quantityOrder}}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="contentc">
+        <div class="chart-container">
+            <h2>Overall Chart</h2>
+            <!-- Sử dụng #overviewChart để làm tham chiếu -->
+            <canvas #overviewChart></canvas>
+        </div>
+        <div class="chart-container">
+            <h2>Details Chart</h2>
+            <!-- Sử dụng #detailsChart để làm tham chiếu -->
+            <canvas #detailsChart></canvas>
+        </div>
+    </div>
+</div>
