@@ -1,0 +1,29 @@
+<div class="wrapper">
+    <div class="container main">
+        <div class="row">
+            <div class="col-md-6 side-image">          
+                
+            </div>
+            <div class="col-md-6 right">               
+                <div class="input-box">                  
+                   <header>Welcome Admin</header>
+                   <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                       <div class="input-field">
+                            <input type="text" class="input" id="email" formControlName="email" required autocomplete="off">
+                            <label for="email">Email</label> 
+                            <div *ngIf="emailError" class="error">*{{ emailError }}</div>
+                        </div> 
+                       <div class="input-field">
+                            <input type="password" class="input" id="pass" formControlName="password" required>
+                            <label for="pass">Password</label>
+                            <div *ngIf="passwordError" class="error">*{{ passwordError }}</div>
+                        </div> 
+                       <div class="input-field">                      
+                            <input type="submit" class="submit" value="Login">
+                       </div> 
+                   </form>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
