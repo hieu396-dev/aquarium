@@ -1,0 +1,33 @@
+<div class="wrapper"> 
+    <div class="form-box">
+        <div class="login-container">
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <div class="top">
+                <span>Don't have an account? <a [routerLink]="['/customer/register']">Register</a></span>
+                <header>Login</header>
+            </div>
+            <div class="input-box abc">
+                <input type="text" class="input-field" formControlName="email" placeholder="Username or Email">                  
+                <i class="bi bi-person-fill"></i> 
+                <div *ngIf="emailError" class="error">*{{ emailError }}</div>                                                                     
+            </div>
+            <div class="input-box abc">
+                <input type="password" class="input-field" formControlName="password" placeholder="Password">
+                <i class="bi bi-key-fill"></i>
+                <div *ngIf="passwordError" class="error">*{{ passwordError }}</div>                
+            </div>
+            <div class="input-box abc">
+                <input type="submit" class="submit" value="Sign In">
+            </div>
+            <div class="two-col">
+                <div class="two">
+                        <label><a href="customer/home">Go to home page</a></label>
+                </div>
+                <div class="two">
+                    <label><a href="admin">Login Admin</a></label>
+                </div>
+            </div> 
+        </form>            
+        </div>
+    </div>
+</div>   
