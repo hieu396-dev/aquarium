@@ -1,0 +1,79 @@
+<div class="content">
+  <div class="mt-5">
+    <h2>Species List</h2>
+    <button *ngIf="hasRole(['ADMINISTRATOR', 'CONTENT_STAFF'])" class="btn btn-primary mb-3" (click)="toggleForm()">Add Species</button>
+    <!-- <h2>{{ isUpdateMode ? 'Edit Species' : 'Add Species' }}</h2> -->
+    <div id="formContainer" class="form-container">
+      <form (ngSubmit)="onSubmit()" #speciesFormDirective="ngForm">
+        <div class="form-group">
+          <label for="name">Species Name:</label>
+          <input type="text" id="name" [(ngModel)]="speciesForm.name" name="name" required aria-describedby="nameError">
+          <div *ngIf="nameError" id="nameError" class="error">*{{ nameError }}</div>
+        </div>
+
+        <div class="form-group">
+          <label for="habitat">Habitat:</label>
+          <input id="habitat" [(ngModel)]="speciesForm.habitat" name="habitat" required aria-describedby="habitatError">
+          <div *ngIf="habitatError" id="habitatError" class="error">*{{ habitatError }}</div>
+        </div>
+
+        <div class="form-group">
+          <label for="diet">Diet:</label>
+          <input type="text" id="diet" [(ngModel)]="speciesForm.diet" name="diet" required aria-describedby="dietError">
+          <div *ngIf="dietError" id="dietError" class="error">*{{ dietError }}</div>
+        </div>
+
+        <div class="form-group">
+          <label for="averageLifespan">Average Lifespan:</label>
+          <input type="number" id="averageLifespan" [(ngModel)]="speciesForm.averageLifespan" name="averageLifespan"
+            required aria-describedby="averageLifespanError">
+          <div *ngIf="averageLifespanError" id="averageLifespanError" class="error">*{{ averageLifespanError }}</div>
+        </div>
+
+        <div class="form-group">
+          <label for="specialCharacteristics">Special Characteristics:</label>
+          <textarea id="specialCharacteristics" [(ngModel)]="speciesForm.specialCharacteristics"
+            name="specialCharacteristics" required aria-describedby="specialCharacteristicsError"></textarea>
+          <div *ngIf="specialCharacteristicsError" id="specialCharacteristicsError" class="error">*{{
+            specialCharacteristicsError }}</div>
+        </div>
+        <div class="form-group">
+          <label for="status">Status:</label>
+          <select id="specialCharacteristics" [(ngModel)]="speciesForm.status" name="status" required aria-describedby="statusError">
+            <option value="ACTIVE">ACTIVE</option>
+            <option value="INACTIVE">INACTIVE</option>
+          </select>
+          <div *ngIf="statusError" id="statusError" class="error">*{{ statusError }}</div>
+        </div>
+        <div class="form-group">
+          <button type="submit">{{ isUpdateMode ? 'Update' : 'Create' }}</button>
+        </div>
+        <div *ngIf="generalErrorMessage" class="error">*{{ generalErrorMessage }}</div>
+      </form>
+    </div>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Species Name</th>
+          <th>Habitat</th>
+          <th>Diet</th>
+          <th>Average Lifespan</th>
+          <th>Special Characteristics</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let species of speciesList">
+          <td>{{ species.name }}</td>
+          <td>{{ species.habitat }}</td>
+          <td>{{ species.diet }}</td>
+          <td>{{ species.averageLifespan }}</td>
+          <td>{{ species.specialCharacteristics }}</td>
+          <td>
+            <button (click)="editSpecies(species.id)" class="btn btn-primary btn-sm">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

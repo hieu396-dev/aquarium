@@ -1,0 +1,23 @@
+.content {
+    margin-left: 250px;
+    padding: 40px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.table th {
+    background-color: #34495e;
+    color: white;
+    font-weight: 600;
+}

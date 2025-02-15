@@ -1,0 +1,20 @@
+<div class="sidebar">
+    <h4><p>Blue Planet</p></h4>
+
+    <div class="admin-info">
+        <img src="https://via.placeholder.com/80" alt="Admin Avatar">
+        <h5><a routerLink="/admin/profile" >{{userInfo?.firstName}}</a></h5>
+        <p>{{userInfo?.email}}</p>
+    </div>
+    <a routerLink="/admin/dashboard"><i class="bi bi-speedometer2"></i> Dashboard</a>
+    <a *ngIf="hasRole(['ADMINISTRATOR', 'CONTENT_STAFF'])" routerLink="/admin/dashboard/aquatic-creatures"><i class="bi bi-tencent-qq"></i> Animal</a>
+    <a *ngIf="hasRole(['ADMINISTRATOR'])" routerLink="/admin/dashboard/manager"><i class="bi bi-person"></i> Manager</a>
+    <a *ngIf="hasRole(['ADMINISTRATOR'])" routerLink="/admin/dashboard/customer"><i class="bi bi-person"></i> Customer</a>
+    <a  *ngIf="hasRole(['ADMINISTRATOR', 'CONTENT_STAFF'])" routerLink="/admin/dashboard/event"><i class="bi bi-calendar-event"></i> Event</a>
+    <a *ngIf="hasRole(['ADMINISTRATOR', 'INVOICE_STAFF'])" routerLink="/admin/dashboard/order"><i class="bi bi-basket"></i> Orders</a>
+    <a *ngIf="hasRole(['ADMINISTRATOR', 'CONTENT_STAFF'])" routerLink="/admin/dashboard/type"><i class="bi bi-list-task"></i> Type</a>
+    <a *ngIf="hasRole(['ADMINISTRATOR', 'CONTENT_STAFF'])" routerLink="/admin/dashboard/species"><i class="bi bi-globe"></i> Species</a>
+    <div class="logout">
+        <a (click)="logout()"><i class="bi bi-box-arrow-right"></i> Log out</a>
+    </div>
+</div>
