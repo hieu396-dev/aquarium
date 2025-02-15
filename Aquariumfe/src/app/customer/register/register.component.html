@@ -1,0 +1,112 @@
+<div class="wrapper">
+    <div class="form-register">
+      <div class="register-container">
+        <div class="top">
+          <span>Already have an account? 
+            <a [routerLink]="['/customer/login']">Login</a>
+          </span>
+          <header>Sign Up</header>
+        </div>
+  
+        <!-- Registration Form -->
+        <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+          <div class="two-forms">
+            <div class="input-box">
+              <input 
+                type="text" 
+                class="input-field" 
+                formControlName="firstName" 
+                placeholder="First name"
+              >
+              <i class="bi bi-person-fill icon"></i>
+              <div *ngIf="firstNameError" class="error">*{{ firstNameError }}</div>
+            </div>
+            <div class="input-box">
+              <input 
+                type="text" 
+                class="input-field" 
+                formControlName="lastName" 
+                placeholder="Last name"
+              >
+              <i class="bi bi-person-fill icon"></i>
+              <div *ngIf="lastNameError" class="error">*{{ lastNameError }}</div>
+            </div>
+          </div>
+          <div class="two-forms">
+            <div class="input-box">
+              <input
+                class="input-field"
+                formControlName="password"
+                [type]="showPassword ? 'text' : 'password'"
+                placeholder="Password"
+              >
+              <i class="bi bi-key-fill icon"></i>
+              <i
+                class="eye-icon bi"
+                [class]="showPassword ? 'bi-eye-slash' : 'bi-eye-fill'"
+                (click)="togglePasswordVisibility()"
+              ></i>
+              <div *ngIf="passwordError" class="error">*{{ passwordError }}</div>
+            </div>
+            <div class="input-box">
+              <input 
+                type="text" 
+                class="input-field" 
+                formControlName="phone" 
+                placeholder="Phone number"
+              >
+              <i class="bi bi-telephone-fill icon"></i>
+            </div>
+          </div>
+          <div class="input-box abc">
+            <input 
+              type="text" 
+              class="input-field" 
+              formControlName="email" 
+              placeholder="Email"
+            >
+            <i class="bi bi-envelope-fill icon"></i>
+            <div *ngIf="emailError" class="error">*{{ emailError }}</div>
+          </div>
+  
+          <!-- Submit Button -->
+          <div class="input-box abc" *ngIf="!isVerificationStep">
+            <input type="submit" class="submit" value="Register">
+          </div>
+  
+          <!-- Remember Me & Terms -->
+          <div class="two-col" *ngIf="!isVerificationStep">
+            <!-- <div class="one">
+              <input type="checkbox" id="register-check">
+              <label for="register-check">Remember Me</label>
+            </div> -->
+            <div class="two">
+              <label><a href="#">Terms & conditions</a></label>
+            </div>
+          </div>
+        </form>
+  
+        <!-- Verification Code Form -->
+        <form 
+          *ngIf="isVerificationStep" 
+          [formGroup]="registerForm" 
+          (ngSubmit)="onConfirmRegistration()"
+        >
+          <div class="input-box abc">
+            <input 
+              type="text" 
+              class="input-field" 
+              formControlName="verificationCode" 
+              placeholder="Verification Code"
+            >
+            <i class="bi bi-lock-fill icon"></i>
+            <div *ngIf="verificationCodeError" class="error">*{{ verificationCodeError }}</div>
+          </div>
+          <div class="input-box abc">
+            <input type="submit" class="submit" value="Verify">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
