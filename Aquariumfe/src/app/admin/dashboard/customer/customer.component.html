@@ -1,0 +1,29 @@
+<div class="content">
+  <div class="mt-5">
+    <h2>Customer List</h2>
+    <input type="text" id="searchInput" onkeyup="searchUser()" placeholder="Search User...">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Phone</th>
+          <th>View Order</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let User of customerList">
+          <td>{{ User.firstName }}</td>
+          <td>{{ User.lastName }}</td>
+          <td>{{ User.email }}</td>
+          <td>{{ User.address }}</td>
+          <td>{{ User.phone }}</td>
+          <td>
+            <button class="btn btn-info" (click)="viewOrder(User.id)">View</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,200 @@
+
+.carousel-item {
+    margin-bottom: 4em;
+  }     
+    .carousel-caption {
+      position: absolute;
+      bottom: 3rem;
+      z-index: 10;
+      padding-bottom: 125px;
+      margin-right: 50px;
+    }
+    .carousel-item {
+      height: 45rem;
+      background-color: #777;
+    }
+    .carousel-item img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 45rem;
+    }
+    .marketing .col-lg-4 {
+      margin-bottom: 1.5rem;
+      text-align: center; 
+    }
+    .marketing h2 {
+      font-weight: 400;
+    }
+    .marketing .col-lg-4 p {
+      margin-right: .75rem;
+      margin-left: .75rem;
+      margin-bottom: 4em;
+    }
+    
+    .featurette-divider {
+      margin: 5rem 0;
+    }
+    .featurette-heading {
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -.05rem;
+    }
+    
+      .carousel-caption p {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
+      }
+    
+      .featurette-heading {
+        font-size: 50px;
+      }
+  
+    
+    @media (min-width: 62em) {
+      .featurette-heading {
+        margin-top: 7rem;
+      }
+    }
+  
+    .header {
+      background: rgb(21, 21, 84);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 120px;
+      border-radius: 0px 50px 100px 50px / 100px 0px 50px 75px;
+      width: 95%;
+      margin-left: 31px;
+  }
+  .header .logo {
+      display: flex;
+      align-items: center;
+  }
+  .header .logo img {
+    height: 65px;
+    margin-right: 10px;
+    width: 110px;
+  }
+  .header nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 16px;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    color: white;
+    margin-left: 30px;
+  }
+  .navbar-dark .navbar-nav .nav-link:hover {
+    color: rgba(255, 255, 255, .5);   
+  }
+  .header .search-signin {
+      display: flex;
+      align-items: center;
+      margin-right: 50px;
+  }
+  .header .search-signin .search-icon {
+      color: white;
+      font-size: 20px;
+      margin-right: 20px;
+  }
+  .header .search-signin .signin-btn {
+      background-color: white;
+      color: #3a8dff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+  } 
+  .form-inline i{
+    color: aliceblue;
+  }
+  header .hsecondary a {
+    margin-left: 7px;
+    display: inline-block;
+    
+  }
+  header .cta {
+    font-size: 18px;
+    line-height: 15px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  .cta-yellow {
+    background-color: white; 
+    color: #063853;
+  }
+  .cta-yellow:hover {
+    background-color:  rgb(9, 154, 202); 
+    color: white;
+  }
+  
+  .para-it-it-it{ 
+    width: 100%;
+  }
+  .para-it-it-it .deco-bottom { 
+    padding-top: 5px;
+    display: block;
+    width: 100%;
+    height: 100px; 
+    margin-top: 50px;
+  }
+  .para-it-it-it .deco-bottom svg {
+    fill: rgb(9, 154, 202);
+  }
+  .featurette{
+    width: 100%;     
+    margin: auto;
+    margin-top: 54px;
+    height: 500px;
+  }
+  .recom{
+    margin-top: 45px;
+  }
+  .featurette .img-recom {
+    height: 350px;
+    width: 200px;
+    margin-left: 5%;
+    margin-top: 85px;
+  }
+  .featurette .img-recom img {
+    border-radius: 30px 50px 100px 85px / 100px 65px 28px 52px;
+  }
+  .back-img img{
+    display: block;
+    height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+  }
+  .back-img {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 4em; 
+    height: 600px;
+  }
+  .dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent, transparent, rgba(0, 0, 0, 0.7));
+  }
+  .back-img .text-right {
+    margin-left: 38%; 
+    margin-top: 12%;
+    color: white;
+  }
+  .back-img .text-right p{
+    font-size: 25px;
+  }

@@ -1,0 +1,79 @@
+<div class="content-container">
+    <!-- User Information Form -->
+    <div class="user-info-container">
+        <h1>User Information</h1>
+        <form [formGroup]="userInfoForm" (ngSubmit)="updateUserInfo()">
+          <label for="first-name">First Name</label>
+          <input type="text" formControlName="firstName" id="first-name" placeholder="Enter first name">
+    
+          <label for="last-name">Last Name</label>
+          <input type="text" formControlName="lastName" id="last-name" placeholder="Enter last name">
+    
+          <label for="email">Email</label>
+          <input type="email" formControlName="email" id="email" placeholder="Enter email">
+    
+          <label for="phone">Phone Number</label>
+          <input type="tel" formControlName="phone" id="phone" placeholder="Enter phone number">
+    
+          <label for="address">Address</label>
+          <input type="text" formControlName="address" id="address" placeholder="Enter address">
+    
+          <button type="submit">Update Info</button>
+        </form>
+        <label for="password">Password</label>
+          <div class="password-field">
+            <input type="password" value="********" disabled>
+            <span class="edit-icon" (click)="togglePasswordFields()" title="Change Password">&#9998;</span>
+          </div>
+    
+          <div *ngIf="showPasswordFields" class="password-change-fields">
+            <form [formGroup]="passwordForm" (ngSubmit)="changePassword()">
+            <label for="old-password">Current Password</label>
+            <input type="password" formControlName="oldPassword" id="old-password" placeholder="Enter current password">
+            <div *ngIf="oldPasswordError" class="error">*{{ oldPasswordError }}</div>   
+    
+            <label for="new-password">New Password</label>
+            <input type="password" formControlName="newPassword" id="new-password" placeholder="Enter new password">
+            <div *ngIf="newPasswordError" class="error">*{{ newPasswordError }}</div>  
+            <button type="submit">Change Password</button>
+            </form>
+          </div>
+      </div>
+
+    
+    <div class="ticket-table-container">
+        <h2>Your Tickets</h2>
+        <table *ngIf="tickets && tickets.length > 0; else noTicketsMessage">
+            <thead>
+              <tr class="hand">
+                <th>Ticket</th>
+                <th>Type</th>
+                <th (click)="sortTickets('number')" title="Sort by Number">Number</th>
+                <th>Status</th>
+                <th (click)="sortTickets('buyDate')" title="Sort by Buy Date">Buy Date</th>
+                <th (click)="sortTickets('expirationDate')" title="Sort by Expiration Date">Expiration Date</th>
+                <th (click)="sortTickets('total')" title="Sort by Total">Total</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ticket of paginatedTickets">
+                    <td>TK0{{ticket.ticketId}}</td>
+                    <td>{{ticket.type}}</td>
+                    <td>{{ticket.number}}</td>
+                    <td>{{ticket.status}}</td>
+                    <td>{{ticket.buyDate}}</td>
+                    <td>{{ticket.expirationDate}}</td>
+                    <td>{{ticket.total}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination-controls" *ngIf="totalPages > 1">
+          <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+          <span>Page {{ currentPage }} / {{ totalPages }}</span>
+          <button (click)="nextPage()" [disabled]="currentPage * itemsPerPage >= tickets.length">Next</button>
+        </div>
+    </div>
+    <ng-template #noTicketsMessage>
+      <p>You don't have a ticket yet</p>
+  </ng-template>
+</div>

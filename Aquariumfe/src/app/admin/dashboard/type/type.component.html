@@ -1,0 +1,64 @@
+<div class="content mt-5">
+  <h2>Type List</h2>
+  <!-- <h2>{{ isUpdateMode ? 'Edit Type' : 'Add Type' }}</h2> -->
+  <button *ngIf="hasRole(['ADMINISTRATOR', 'CONTENT_STAFF'])" class="btn btn-primary mb-3" (click)="toggleForm()"(click)="resetForm()" >Add Type</button>
+  <div id="formContainer" class="form-container">
+    <form (ngSubmit)="onSubmit()" #typeFormDirective="ngForm" id="formContainer">
+      <div class="form-group">
+        <label for="typeName">Type Name:</label>
+        <input type="text" id="typeName" [(ngModel)]="typeForm.typeName" name="typeName" required maxlength="20"
+          aria-describedby="typeNameError">
+        <div *ngIf="typeNameError" id="typeNameError" class="error">*{{ typeNameError }}</div>
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" id="price" [(ngModel)]="typeForm.price" name="price" required min="0.01"
+          aria-describedby="priceError">
+        <div *ngIf="priceError" id="priceError" class="error">*{{ priceError }}</div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" [(ngModel)]="typeForm.description" name="description" maxlength="100"
+          aria-describedby="descriptionError"></textarea>
+        <div *ngIf="descriptionError" id="descriptionError" class="error">*{{ descriptionError }}</div>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <select id="status" [(ngModel)]="typeForm.status" name="status" required aria-describedby="statusError">
+          <option value="ACTIVE">ACTIVE</option>
+          <option value="INACTIVE">INACTIVE</option>
+        </select>
+        <div *ngIf="statusError" id="statusError" class="error">*{{ statusError }}</div>
+      </div>
+      <div class="form-group">
+        <button type="submit">{{ isUpdateMode ? 'Update' : 'Create' }}</button>
+      </div>
+      <div *ngIf="generalErrorMessage" class="error">*{{ generalErrorMessage }}</div>
+    </form>
+  </div>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Type Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let type of typeList">
+        <td>{{ type.typeName }}</td>
+        <td>{{ type.price | currency }}</td>
+        <td>{{ type.description }}</td>
+        <td>{{ type.status }}</td>
+        <td>
+          <button (click)="editType(type.id)" class="btn btn-primary btn-sm">Edit Type</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

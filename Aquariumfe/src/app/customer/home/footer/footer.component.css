@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* General Footer Styling */
+footer {
+    background-color: rgb(21, 21, 84);
+    color: #ffffff;
+    position: relative;
+}
+
+/* Wave Effect */
+.wave-container {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Set a fixed height for the wave */
+    overflow: hidden; /* Ensures the wave does not overflow */
+}
+
+.wave-container svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: -90px; /* Adjust the bottom positioning for better overlap */
+}
+
+/* Footer Content */
+.footer-content {
+    padding: 60px 70px 30px;
+}
+
+/* Footer Top */
+.footer-top {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-between;
+}
+
+/* Adjust widths for columns */
+.footer-column {
+    flex: 1; /* Allow columns to grow equally */
+    min-width: 180px; /* Minimum width to maintain layout */
+    margin: 10px; /* Add margin for spacing */
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #cbcbcbe8;
+    transition: color 0.3s; /* Transition for link color */
+}
+
+.footer-column ul li a:hover {
+    color: #3467fb; /* Change color on hover */
+}
+
+.donation {
+    flex: 1; /* Allow donation section to grow */
+    text-align: center;
+    margin: 10px; /* Add margin for spacing */
+}
+
+.donate-btn {
+    display: inline-block;
+    background-color: #081a21;
+    color: rgb(214, 214, 214);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s; /* Transition for button background and text color */
+}
+
+.donate-btn:hover {
+    background-color: #39c0f5;
+    color: #081a21;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align all items */
+    padding: 50px 0 0;
+    background-color: #00121a;
+    color: white;
+}
+
+.footer-bottom-links {
+    display: flex; /* Use flexbox for links */
+    gap: 15px; /* Space between links */
+    margin-bottom: 10px; /* Spacing below the links */
+    text-align: center; /* Center align the text in this section */
+}
+
+.footer-bottom-links a {
+    text-decoration: none;
+    color: #cbcbcbe8; /* Same color as above */
+    transition: color 0.3s; /* Transition for link color */
+}
+
+.footer-bottom-links a:hover {
+    color: #3467fb; /* Change color on hover */
+}
+
+.footer-bottom-info {
+    text-align: center; /* Center text in footer info */
+    background-color: #00121a;
+    color: white;
+    padding: 15px 0 50px;
+    font-size: 14px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .footer-top {
+        padding: 40px 30px; /* Reduced padding for medium screens */
+    }
+
+    .footer-column {
+        flex: 1 1 45%; /* Two columns on medium screens */
+    }
+
+    .donation {
+        flex: 1; /* Full width for donation section */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-top {
+        padding: 30px 20px; /* Further reduced padding for smaller screens */
+    }
+
+    .footer-column {
+        flex: 1 1 100%; /* Full width for each column on smaller screens */
+        text-align: center; /* Center text in columns */
+        margin-bottom: 20px; /* Spacing between columns */
+    }
+
+    .donation {
+        width: 100%; /* Full width on smaller screens */
+        margin-top: 10px; /* Spacing above donation section */
+    }
+
+    .footer-bottom {
+        flex-direction: column; /* Stack footer bottom items */
+        align-items: center; /* Center alignment */
+    }
+
+    .footer-bottom-info {
+        margin-top: 10px; /* Spacing above bottom info */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-bottom-links {
+        flex-direction: column; /* Stack links vertically on mobile */
+        align-items: center; /* Center align links */
+    }
+
+    .footer-bottom-links a {
+        margin: 5px 0; /* Add margin for spacing */
+    }
+}
+
+/* Icon styles */
+.icon {
+    text-align: center; /* Center align icons */
+    margin-top: 20px; /* Space between the donate button and icons */
+}
+
+.icon i {
+    margin: 0 10px; /* Spacing between icons */
+    font-size: 30px; /* Adjust size as needed */
+    color: #cbcbcbe8; /* Color for the icons */
+    transition: color 0.3s; /* Transition for icon color */
+}
+
+.icon i:hover {
+    color: #00121a; /* Change color on hover */
+}
+
+.sups {
+    padding: 30px 10px 0 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer .footer-soc .sups a {
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+footer .footer-soc a {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+footer .footer-soc .sups img {
+    height: 86px;
+    vertical-align: middle;
+}
+
+footer .footer-soc .icon {
+    padding-top: 30px;
+    padding-right: 30px;
+}
+
+footer .footer-soc .icon i {
+    padding-left: 10px;
+}
+
+.footer-soc .sups a img:hover {
+    transform: scale(0.8);
+    transition: 1s ease;
+}
+
+.banner {
+    max-width: 1320px;
+}
+
+.footer-info {
+    text-align: center;
+}

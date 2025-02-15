@@ -1,0 +1,202 @@
+.carousel-item {
+    margin-bottom: 4em;
+  }     
+    .carousel-caption {
+      position: absolute;
+      bottom: 3rem;
+      z-index: 10;
+      padding-bottom: 125px;
+      margin-right: 50px;
+    }
+    .carousel-item {
+      height: 45rem;
+      background-color: #777;
+    }
+    .carousel-item img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 45rem;
+    }
+.img-event img {
+    border-radius: 30px 50px 100px 85px / 100px 65px 28px 52px; 
+}
+
+  .search-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 75px;  
+      }
+
+      .search-bar {
+          width: 100%;
+          max-width: 500px;
+          display: flex;
+          align-items: center;
+          border: 1px solid #ccc;
+          border-radius: 50px;
+          padding: 10px 15px;
+          background-color: #fff;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .search-bar input[type="text"] {
+          flex: 1;
+          border: none;
+          outline: none;
+          padding: 8px;
+          font-size: 16px;
+          border-radius: 50px;
+      }
+
+      .search-bar button {
+          background-color: #007bff;
+          color: white;
+          border: none;
+          padding: 10px 15px;
+          border-radius: 50px;
+          cursor: pointer;
+          font-size: 16px;
+          transition: background-color 0.3s;
+      }
+
+      .search-bar button:hover {
+          background-color: #0056b3;
+      }
+      .node-events_hub .event .cta {
+        display: inline-block;
+        padding: 15px 20px;
+        border-radius: 8px;
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    .featurette{
+      margin-top: 60px; 
+    }
+    
+    .cta-yellow:hover, .cta-outline:hover {
+      background-color: #063853;
+      color: #fff;
+    }
+    .cta-yellow {
+      background-color:  #F2B000; 
+      color: #fff;
+    } 
+    .cta {
+        font-size: 20px;
+        line-height: 32px;
+        padding: 16px 26px;
+        border-radius: 16px;
+        transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: 50px; 
+    } 
+
+    .cta-event {
+      margin-top: 35px;
+    }
+
+    .node-events_hub .additional-content .para:first-child {
+      padding-top: 0;
+  }
+  .para-mediacentre {
+      padding: 60px 0;
+  }
+
+  .para-mediacentre .img img {
+    border-radius: 20px;
+}
+
+.para img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.para-mediacentre .inner {
+  background-color: rgb(53, 161, 197);
+  border-radius: 20px;
+  padding: 60px;
+  overflow: hidden;
+  position: relative;
+}
+
+.newsletter {
+  background-color: rgb(53, 161, 197);
+}
+
+.newsletter {
+  position: relative;
+  padding: 60px 0 60px 0;
+  margin-top: 15px;
+}
+.newsletter .txt {
+  color: #fff;
+  padding-bottom: 45px;
+}
+
+.newsletter h2 {
+  font-family: NewBeginnings, sans-serif;
+  text-transform: uppercase;
+  font-size: 50px;
+  line-height: 60px;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+.newsletter .txt p {
+  font-size: 20px;
+  line-height: 32px;
+  margin-bottom: 50px; 
+}
+
+.newsletter img {
+  width: 100%;
+  vertical-align: middle;
+  border-radius: 30px 50px 100px 85px / 100px 65px 28px 52px;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 8px;
+}
+
+.page-btn {
+  padding: 8px 12px;
+  margin: 0 4px;
+  border: none;
+  background-color: #F2B000;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.page-btn:hover:not(.active) {
+  background-color: #e28d03;
+  transform: scale(1.1);
+}
+
+.page-btn:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.page-btn.active {
+  background-color: #063853;
+  font-weight: bold;
+  cursor: default;
+}
+
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limits to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
