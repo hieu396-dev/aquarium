@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: spring-boot-backend
+    env: java
+    plan: free
+    buildCommand: ./mvnw clean install
+    startCommand: java -jar target/your-app.jar
+    branch: main
+    disk: 1GB
+
+  - type: static_site
+    name: angular-frontend
+    buildCommand: |
+      npm install
+      npm run build --prod
+    publishDirectory: dist/your-angular-app
+    branch: main
+    disk: 1GB
